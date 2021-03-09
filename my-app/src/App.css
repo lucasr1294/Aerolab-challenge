@@ -35,6 +35,17 @@
   margin-left: 2px;
 }
 
+.nav-coin {
+  margin-top: 2.5px;
+}
+
+.cart {
+  color: rgb(204, 111, 35);
+  margin-top: 1px;
+  margin-left: 15px;
+  
+}
+
 
 /* Banner */
 
@@ -73,17 +84,30 @@
 /* Sort box */
 
 .sort-container .product-qty {
-  color: rgb(56, 56, 56);
+  font-size: 18.5px;
+  color: rgb(59, 59, 59);
   
 }
 
 .sort-container .sort-item {
-  color: rgb(179, 179, 179);
+  font-size: 17px;
+  margin-left: 15px;
+  margin-top: 0px;
+  color: rgb(153, 153, 153);
 }
 
 .sort-container .sort-item-clickable {
   cursor: pointer;
-  color: rgb(179, 179, 179);
+  color: rgb(151, 151, 151);
+  font-size: 15px;
+}
+
+.sort-container .sort-item-clicked {
+  cursor: pointer;
+  color: rgb(255, 255, 255);
+  font-size: 15px;
+  background-color: rgb(38, 195, 243);
+  border-radius: 20px;
 }
 
 /* Product box */
@@ -98,15 +122,20 @@
 .sort-container {
   display: flex;
   flex-direction: row;
-  margin-top: 40px;
+  align-items: center;
+  margin-top: 30px;
+  margin-bottom: 20px;
   margin-left: 50px;
   font-size: 20px;
 }
 
 .sort-container p{
-  margin-right: 20px;
-  margin-bottom: 20px;
-  font-size: 20px;
+  cursor: pointer;
+  color: rgb(75, 74, 74);
+  font-size: 15px;
+  border-radius: 20px;
+  padding: 8px 12px 8px 12px;
+  margin-right: 5px;
 
 }
 
@@ -189,7 +218,7 @@
 .item1-og {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: center; 
   align-items: center;
   height: 100%;
   width: 100%;
@@ -205,7 +234,7 @@
 
 .coin {
   margin-top: 3px;
-  width: 34%;
+  width: 25px;
 }
 
 .cost {
@@ -222,9 +251,9 @@
   margin-right: 5px;
 }
 
-
 .item1-og:hover{
   background-color: rgba(12, 191, 245, 0.76);
+  transition: 0.5s;
 }
 .item1-og:hover .hide .coin {
   display: block;
@@ -249,6 +278,25 @@
   background-color: white;
   color: rgb(97, 96, 96);
   cursor: pointer;
+}
+
+.item1-og .buy-img-hide {
+  position: absolute;
+  width: 20%;
+  margin-left: 200px;
+  margin-bottom: 210px;
+  cursor: pointer;
+  display: none;
+}
+
+.item1-og:hover .buy-img-hide {
+  display: block;
+}
+
+.white-bag {
+  margin-top: 9px;
+  margin-left: 5px;
+  width: 75%;
 }
 
 
@@ -317,7 +365,16 @@
   z-index: 1;
   background-color: rgba(53, 53, 53, 0.774);
   border-radius: 5px;
-  
+}
+
+.points-needed {
+  display: flex;
+  margin-top: -20px;
+  justify-content: center;
+}
+
+.no-coin {
+  margin-top: 2px;
 }
 
 .item1 p{
@@ -327,7 +384,6 @@
 }
 
 .item1 h5{
-  margin-top: 10px;
   font-size: 18px;
   color: rgba(226, 226, 226, 0.973);
 }
@@ -338,10 +394,12 @@
 }
 
 .item1 h6{
+  cursor: pointer;
   margin-top: -19px;
-  font-size: 18px;
-  height: 35px;
-  width: 100%;
+  font-size: 14px;
+  height: 30px;
+  width: 70%;
+  border-radius: 40px;
   padding-top: 10px;
   background-color: rgba(255, 255, 255, 0.774);
   color: rgb(73, 73, 73);
@@ -384,8 +442,67 @@
   
 }
 
-.pagination a {
+.page-link-underline {
+  text-decoration: underline;
+  color: rgb(0, 174, 255);
+  font-size: 20px;
+}
+
+.page-link {
   text-decoration: none;
   color: rgb(0, 174, 255);
   font-size: 20px;
+}
+
+/* Bottom sort  */
+
+.sort-bottom-container {
+  display: flex;
+  margin-left: 115px;
+  margin-bottom: 50px;
+}
+
+.product-bottom-item {
+  font-size: 20px;
+  font-weight: 400;
+  color: rgb(48, 48, 48);
+}
+
+/* Spinner */
+
+.lds-ring {
+  display: inline-block;
+  margin-top: 100px;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border: 8px solid #fed;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: rgb(226, 128, 16) transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
